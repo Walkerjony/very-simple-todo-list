@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+</head>
+<script>
+  function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("É necessário digitar uma tarefa");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+}
+</script>
+<body>
+    <div id="minhaDiv" class="header">
+        <h3>Minha lista de tarefas</h3>
+        <input type="text" id="myInput" placeholder="Tarefa">
+         <span onclick="newElement()" class="addBtn">Adicionar</span>
+        </div>
+
+        <ul id="myUL">
+            <li>Tarefa 1</li>
+            <li>Tarefa 2</li>
+            <li>Tarefa 3</li>
+        </ul>
+</body>
+</html>
